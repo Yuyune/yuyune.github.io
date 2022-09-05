@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.ttf') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 10rem;
+  font-style: normal;
+}
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 36rem;
+}
+.head .head-warp {
+  width: 60rem;
+  height: 100vh;
+  background-color: lightblue;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+.head .head-warp a {
+  display: block;
+}
+.head .head-warp a img {
+  width: 36rem;
+  height: auto;
+  display: block;
+  padding-bottom: 10px;
+}
+.head .head-warp a span {
+  display: inline;
+  font-size: 8rem;
+}
+.head .head-warp .introduce {
+  padding-top: 30px;
+}
+.head .head-warp .introduce ul li {
+  padding: 20px 0;
+  font-size: 6rem;
+  display: flex;
+  align-items: center;
+}
+.head .head-warp .introduce ul li span {
+  margin-right: 20px;
+}
+.works {
+  margin-left: 60rem;
+}
+/*# sourceMappingURL=./index.css.map */
