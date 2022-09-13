@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/360.css">
+    <title>360极速浏览器</title>
+</head>
+
+<body>
+    <div class="head">
+        <div class="head-con">
+            <div class="logo">
+                <img src="./image&video/标题.png" alt="">
+            </div>
+            <span class="link">
+                <a href="">论坛</a>
+                <a href="">扩展</a>
+                <a href="">Mac版</a>
+            </span>
+        </div>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide  swiper-slide-fluent">
+                <!-- <img src="./1.jpg" alt=""> -->
+                <div class="title-box">
+                    <p class="title-work">畅快浏览 极致体验</p>
+                    <p class="title-tip">全新Chrome内核浏览器，性能更强，速度更快</p>
+                    <span class="aline">
+                        <a href="#" id="load">32位版本</a>
+                        <a href="#" id="window">
+                            <img src="./image&video/window.png" alt="">
+                            64位版本
+                            <p>NEW</p>
+                        </a>
+                    </span>
+                </div>
+                <img class="left img-anim" src="./image&video/左星球.png" alt="">
+                <img class="right img-anim" src="./image&video/右星球.png" alt="">
+                <img class="star star-anim" src="./image&video/飞船.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <video src="./image&video/22.mp4" autoplay loop muted></video>
+                <div class="word-content">
+                    <p class="bigwork">极速</p>
+                    <div class="line"></div>
+                    <p class="midword">全新Chromium内核</p>
+                    <p class="smaword">性能强劲，快如闪电。</p>
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <video src="./image&video/33.mp4" autoplay loop muted></video>
+                <div class="word-content">
+                    <p class="bigwork">极酷</p>
+                    <div class="line"></div>
+                    <p class="midword">暗夜炫黑模式</p>
+                    <p class="smaword">定义酷，定义你。</p>
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <video src="./image&video/44.mp4" autoplay loop muted></video>
+                <div class="word-content">
+                    <p class="bigwork">极安全</p>
+                    <div class="line"></div>
+                    <p class="midword">DNS加密防劫持</p>
+                    <p class="smaword">安全升级，肆意无忌。</p>
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <video src="./image&video/55.mp4" autoplay loop muted></video>
+                <div class="word-content">
+                    <p class="bigwork">极视界</p>
+                    <div class="line"></div>
+                    <p class="midword">4K高清视频播放</p>
+                    <p class="smaword">还原真实之美 ，尽显万物本色。</p>
+                    <a href=""></a>
+                </div>
+                <div class="footer">
+                    Copyright © 2005-2022 360.CN All Rights Reserved 360互联网安全中心
+                    <a href="">隐私政策</a>
+                    <a href="">京ICP证080047号[京ICP备08010314号-6]</a>
+                    <br>
+                    <span>
+                        网站举报电话：4006693600 举报邮箱：
+                        <a href="mailto:kefu@360.cn">kefu@360.cn</a>
+                        互联网违法和不良信息举报中心：
+                        <a target="_blank" href="https://www.12377.cn/">https://www.12377.cn</a>
+                    </span>
+                    <br>
+                    <a href="">
+                        <img src="./image&video/警徽.png" alt="">
+                        京公网安备 11000002000006号
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+    </div>
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #010001;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #010001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .swiper-slide-fluent {
+            background-image: url("./image&video/1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .swiper-slide video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(-24px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+        .img-anim {
+            animation: move 5s linear infinite alternate ;
+        }
+        @keyframes star {
+            0% {
+                transform:rotate(0deg) ;
+            }
+            100% {
+                transform:rotate(-45deg);
+            }
+
+        }
+        .star-anim{
+
+            animation:star 30s linear infinite alternate;
+        }
+    </style>
+    </head>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"> </script>
+    <script>
+
+        var swiper = new Swiper(".swiper", {
+            direction: "vertical",
+            speed: 1000,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            mousewheel: true,
+
+        });
+        $('.swiper-pagination-bullet').mouseenter(function () {
+            this.click();
+        })
+        setInterval(function () {
+            $(".swiper-slide").find("div.word-content").removeClass('word-content-show');
+            $(".swiper-slide.swiper-slide-active").find("div.word-content").addClass('word-content-show');
+        }, 1500);
+
+    </script>
+</body>
+
+</html>

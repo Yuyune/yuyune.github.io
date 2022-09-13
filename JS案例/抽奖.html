@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九宫格抽奖</title>
+</head>
+
+<body>
+
+    <p id="prize"></p>
+    <div class="box">
+        <span class="aa">手机</span>
+        <span>平板</span>
+        <span>电磁炉</span>
+        <span>洗衣机</span>
+        <span>衣柜</span>
+        <span>冰箱</span>
+        <span>电脑</span>
+        <span>电视</span>
+        <button id="xxx">开始</button>
+    </div>
+    <style>
+        .box {
+            width: 350px;
+            height: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            position: relative;
+            top: 60px;
+        }
+
+        p#prize {
+            display: block;
+            padding: 0;
+            margin: 5px 0;
+            height: 50px;
+            line-height: 50px;
+            width: 325px;
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            margin-left: -162px;
+        }
+
+        .box span.aa {
+            background-color: #4e4e4e;
+        }
+
+        .box span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background-color: skyblue;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        span:nth-of-type(4) {
+            position: relative;
+            left: 220px;
+        }
+
+        span:nth-of-type(5) {
+            position: relative;
+            left: 110px;
+            top: 115px;
+        }
+
+        span:nth-of-type(6) {
+            position: relative;
+            left: -110px;
+            top: 115px;
+        }
+
+        span:nth-of-type(8) {
+            position: relative;
+            left: -110px;
+            top: -115px;
+        }
+
+        span:nth-of-type(9) {
+            position: relative;
+            left: -110px;
+            top: -115px;
+            background-color: rgb(229, 68, 68);
+        }
+
+        #xxx {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 100px;
+            border: none;
+            position: relative;
+            left: -110px;
+            top: -115px;
+            background-color: rgb(229, 68, 68);
+            cursor: pointer;
+        }       
+    </style>
+    <script>
+        var box = document.querySelector('.box');
+
+        var spanDom = box.querySelectorAll('span');
+
+        var prize = document.querySelector('#prize');
+
+        var btn = document.querySelector('#xxx')
+
+        var status = true;
+
+        var index = 0;
+
+        function showBox(n) {
+
+            for (let i = 0; i < spanDom.length; i++) {
+                if (n == i) {
+                    spanDom[i].classList.add('aa');
+                } else if (n == spanDom.length) {
+                    n = 0;
+                    spanDom[i].classList.add('aa');
+                } else {
+                    spanDom[i].classList.remove('aa');
+                }
+            }
+            return n;
+
+        }
+        btn.onclick = function () {
+
+            if (status) {
+                status = false;
+                btn.disabled = true;
+                var time = setInterval(function () {
+                    var e = index >= spanDom.length - 1 ? index = 0 : ++index;
+                    showBox(e);
+
+                }, 100)
+                setTimeout(function () {
+                    clearInterval(time);
+                    status = true;
+                    btn.disabled=false;               
+                    prize.innerText = '恭喜你抽中' + spanDom[index].innerText + '!!!';
+                }, (Math.round(Math.random() * 6000)+1000))
+            }
+        }
+
+    </script>
+</body>
+
+</html>

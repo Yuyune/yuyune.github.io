@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <title>Loading & 按钮</title>
+    <style>
+        .loading {
+            width: calc(50% - 20px);
+            margin-right: 20px;
+        }
+
+        .loading .loader {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .botton {
+            width: 50%;
+        }
+
+        .botton h1 {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="loading">
+        <h1>Loading</h1>
+        <div class="loader">
+            <div class="item">
+                <div class="la-pacman">
+                    <div class="big1"></div>
+                    <div class="big2"></div>
+                    <div class="small1"></div>
+                    <div class="small2"></div>
+                    <div class="small3"></div>
+                    <div class="small4"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="la-ball">
+                    <div class="out"></div>
+                    <div class="inne"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="la-climbing">
+                    <div class="dot"></div>
+                    <div class="cli1"></div>
+                    <div class="cli2"></div>
+                    <div class="cli3"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="cricle-border">
+                    <div class="cricle-core"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pulse">
+                    <div class="bubble1"></div>
+                    <div class="bubble2"></div>
+                    <div class="bubble3"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="solar">
+                    <div class="earth">
+                        <div class="planet"></div>
+                        <div class="mercury">
+                            <div class="planet"></div>
+                            <div class="sun"></div>
+                        </div>
+                    </div>
+                    <div class="venus">
+                        <div class="planet"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="loader-svg">
+                    <svg class="star">
+                        <polygon
+                            points="29.8 0.3 22.8 21.8 0 21.8 18.5 35.2 11.5 56.7 29.8 43.4 48.2 56.7 41.2 35.1 59.6 21.8 36.8 21.8 "
+                            fill="#18ffff">
+                        </polygon>
+                    </svg>
+                    <div class="circles"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="botton">
+        <h1>按钮动画</h1>
+        <p>悬停动画设计！</p>
+        <div class="fram">
+            <button class="custom btn1"><span>Read More</span></button>
+            <button class="custom btn2">Read More</button>
+            <button class="custom btn3">
+                <span class="click">Click</span>
+                <span class="read">Read More</span>
+            </button>
+            <button class="custom btn4">Read More</button>
+            <button class="custom btn5">Read More</button>
+            <button class="custom btn6">Read More</button>
+        </div>
+
+        <div class="btn-click">
+            <div class="btn-click1">
+                <label>
+                    <input type="checkbox" id="btn">
+                    <div class="box">
+                        <div class="no">NO</div>
+                        <div class="off">OFF</div>
+                        <div class="dot"></div>
+                    </div>
+                </label>
+                
+            </div>
+            <div class="btn-click2">
+                <label>
+                    <input type="checkbox" id="btn2">
+                    <div class="btn">
+                        <span class="iconfont moon">&#xe6a0;</span>
+                        <span class="iconfont sun">&#xe6a7;</span>
+                    </div>
+                </label>
+                <span>背景切换</span>
+            </div>
+        </div>
+    </section>
+    <script>
+        var h = document.querySelectorAll("h1");
+        document.querySelector(".btn").onclick = function () {
+            if (!document.querySelector("#btn2").checked) {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = '#fff';
+                h.forEach((el) => { el.style.color = '#fff';});
+                document.querySelector("p").style.color = '#fff';
+            }else {
+                document.body.style.backgroundColor = '#e0e5ec';
+                document.body.style.color = 'black';
+                h.forEach((el) => { el.style.color = '#353535';});
+                document.querySelector("p").style.color = '#676767';
+            }
+        }
+    </script>
+</body>
+
+</html>

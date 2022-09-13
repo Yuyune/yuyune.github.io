@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/music.css">
+    <title>音乐播放器</title>
+</head>
+<body>
+    <div class="music">
+        <div class="music-warp">
+            <div class="imge">
+                <img src="../image/谪仙.jpg" alt="">
+            </div>
+            <div class="now-info">
+                <div class="music-title">
+                    <h1></h1>
+                    <span></span>
+                    <div class="music-play">
+                        <audio class="yiyue" src="../image/叶里、伊格赛听 - 谪仙.mp3"></audio>
+                    </div>
+                </div>
+                <div class="music-controls">
+                    <div class="contro">
+                        <label>
+                            <input type="range" name="buffer" id="" min="0" max="100" value="" step="">
+                            <div class="buffer">
+                                <span class="con"></span>
+                            </div>
+                        </label>
+                        <span class="star"></span>
+                        <span class="end"></span>
+                    </div>
+                </div>
+                <div class="music-btn">
+                    <a href="#" class="prv" title="上一曲"><span class="iconfont">&#xe6be;</span></a>
+                    <label>
+                        <input type="checkbox" name="" id="btn">
+                        <div class="check">
+                            <div class="pause" title="播放"><span class="iconfont pause">&#xe6d6;</span></div>
+                            <div class="play" title="暂停"><span class="iconfont play">&#xe6b2;</span></div>
+                        </div>
+                    </label>
+                    <a href="#" class="next" title="下一曲"><span class="iconfont">&#xe6ac;</span></a>
+                    <div class="play-check">
+                        <span title="列表循环" class="iconfont current ii">&#xe6ab;</span></a>
+                        <span title="随机播放" class="iconfont random">&#xe6ea;</span></a>
+                        <span title="单曲循环" class="iconfont single">&#xe6c3;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../css/music.js"></script>
+</body>
+</html>

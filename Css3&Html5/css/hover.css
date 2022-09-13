@@ -1,0 +1,1064 @@
+body {
+  font-family: "Cormorant Garamond", serif;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+ul {
+  margin: 0;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+li {
+  list-style: none;
+  padding: 15px;
+  margin: 0px 5px;
+  background-color: #e1e1e1;
+  color: #666;
+  cursor: pointer;
+}
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-bottom: 100px;
+}
+.main .grow:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.main .shrink:hover {
+  transform: scale(0.9);
+  transition: all 0.3s;
+}
+@keyframes pluse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}
+.main .pulse:hover {
+  animation-name: pluse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+@keyframes pulse-grow {
+  100% {
+    transform: scale(1.1);
+  }
+}
+.main .pulse-grow:hover {
+  animation-name: pulse-grow;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+@keyframes pulse-shrink {
+  100% {
+    transform: scale(0.9);
+  }
+}
+.main .pulse-shrink:hover {
+  animation-name: pulse-shrink;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+@keyframes push {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.main .push:hover {
+  animation-name: push;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes pop {
+  50% {
+    transform: scale(1.2);
+  }
+}
+.main .pop:hover {
+  animation-name: pop;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.main .bounce-in:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.main .bounce-out:hover {
+  transform: scale(0.8);
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.main .rotate:hover {
+  transform: rotate(4deg);
+  transition: all 0.3s;
+}
+.main .grow-rotate:hover {
+  transform: scale(1.1) rotate(4deg);
+  transition: all 0.3s;
+}
+.main .float {
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .float:hover {
+  transform: translateY(-8px);
+}
+.main .sink {
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .sink:hover {
+  transform: translateY(8px);
+}
+@keyframes bob {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes bob-float {
+  100% {
+    transform: translateY(-8px);
+  }
+}
+.main .bob:hover {
+  animation-name: bob-float, bob;
+  animation-duration: 0.3s, 1.5s;
+  animation-delay: 0s, 0.3s;
+  animation-timing-function: ease-out, ease-out;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes hang {
+  0% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+@keyframes bob-hang {
+  100% {
+    transform: translateY(8px);
+  }
+}
+.main .hang:hover {
+  animation-name: bob-hang, hang;
+  animation-duration: 0.3s, 1.5s;
+  animation-delay: 0s, 0.3s;
+  animation-timing-function: ease-out, ease-out;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+  animation-fill-mode: forwards;
+}
+.main .skew:hover {
+  transform: skew(-10deg);
+  transition: all 0.3s;
+}
+.main .skew-forward {
+  transition: all 0.3s;
+  transform-origin: bottom;
+}
+.main .skew-forward:hover {
+  transform: skew(-10deg);
+}
+.main .skew-backward {
+  transition: all 0.3s;
+  transform-origin: bottom;
+}
+.main .skew-backward:hover {
+  transform: skew(10deg);
+}
+@keyframes horizontal {
+  16.65% {
+    transform: translateX(8px);
+  }
+  33.3% {
+    transform: translateX(-6px);
+  }
+  49.95% {
+    transform: translateX(4px);
+  }
+  66.6% {
+    transform: translateX(-2px);
+  }
+  83.25% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.main .wobble-horizontal:hover {
+  animation-name: horizontal;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes vertical {
+  16.65% {
+    transform: translateY(8px);
+  }
+  33.3% {
+    transform: translateY(-6px);
+  }
+  49.95% {
+    transform: translateY(4px);
+  }
+  66.6% {
+    transform: translateY(-2px);
+  }
+  83.25% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.main .vertical:hover {
+  animation-name: vertical;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes bottom-right {
+  16.65% {
+    transform: translate(8px, 8px);
+  }
+  33.3% {
+    transform: translate(-6px, -6px);
+  }
+  49.95% {
+    transform: translate(4px, 4px);
+  }
+  66.6% {
+    transform: translate(-2px, -2px);
+  }
+  83.25% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.main .bottom-right:hover {
+  animation-name: bottom-right;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes top-right {
+  16.65% {
+    transform: translate(8px, -8px);
+  }
+  33.3% {
+    transform: translate(-6px, 6px);
+  }
+  49.95% {
+    transform: translate(4px, -4px);
+  }
+  66.6% {
+    transform: translate(-2px, 2px);
+  }
+  83.25% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.main .top-right:hover {
+  animation-name: top-right;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes topwobble {
+  16.65% {
+    transform: skew(-12deg);
+    transform-origin: bottom;
+  }
+  33.3% {
+    transform: skew(10deg);
+    transform-origin: bottom;
+  }
+  49.95% {
+    transform: skew(-6deg);
+    transform-origin: bottom;
+  }
+  66.6% {
+    transform: skew(4deg);
+    transform-origin: bottom;
+  }
+  83.25% {
+    transform: skew(-2deg);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: skew(0deg);
+    transform-origin: bottom;
+  }
+}
+.main .topwobble:hover {
+  animation-name: topwobble;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes wobble-bottom {
+  16.65% {
+    transform: skew(-12deg);
+    transform-origin: top;
+  }
+  33.3% {
+    transform: skew(10deg);
+    transform-origin: top;
+  }
+  49.95% {
+    transform: skew(-6deg);
+    transform-origin: top;
+  }
+  66.6% {
+    transform: skew(4deg);
+    transform-origin: top;
+  }
+  83.25% {
+    transform: skew(-2deg);
+    transform-origin: top;
+  }
+  100% {
+    transform: skew(0deg);
+    transform-origin: top;
+  }
+}
+.main .wobble-bottom:hover {
+  animation-name: wobble-bottom;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes wobble-skew {
+  16.65% {
+    transform: skew(-12deg);
+    transform-origin: center;
+  }
+  33.3% {
+    transform: skew(10deg);
+    transform-origin: center;
+  }
+  49.95% {
+    transform: skew(-6deg);
+    transform-origin: center;
+  }
+  66.6% {
+    transform: skew(4deg);
+    transform-origin: center;
+  }
+  83.25% {
+    transform: skew(-2deg);
+    transform-origin: center;
+  }
+  100% {
+    transform: skew(0deg);
+    transform-origin: center;
+  }
+}
+.main .wobble-skew:hover {
+  animation-name: wobble-skew;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes buzz {
+  50% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+.main .buzz:hover {
+  animation-name: buzz;
+  animation-duration: 0.15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes buzz-out {
+  10% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  20% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  30% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  40% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  60% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  70% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  80% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  90% {
+    transform: translateX(1px) rotate(0);
+  }
+  100% {
+    transform: translateX(-1px) rotate(0);
+  }
+}
+.main .buzz-out:hover {
+  animation-name: buzz-out;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.main .forward:hover {
+  transform: translateX(8px);
+  transition: all 0.3s;
+}
+.main .backward:hover {
+  transform: translateX(-8px);
+  transition: all 0.3s;
+}
+.main .fade:hover {
+  background-color: #2098d1;
+  color: #fff;
+  transition: all 0.3s;
+}
+@keyframes back-pulse {
+  50% {
+    background-color: rgba(32, 152, 209, 0.75);
+  }
+}
+.main .back-pulse:hover {
+  animation-name: back-pulse;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-color: #2098d1;
+  color: #fff;
+}
+.main .sweep-to-right {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.main .sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .sweep-to-right:hover {
+  color: #fff;
+}
+.main .sweep-to-right:hover:before {
+  transform: scaleX(1);
+}
+.main .sweep-to-left {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.main .sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .sweep-to-left:hover {
+  color: #fff;
+}
+.main .sweep-to-left:hover:before {
+  transform: scaleX(1);
+}
+.main .sweep-to-bottom {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.main .sweep-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .sweep-to-bottom:hover {
+  color: #fff;
+}
+.main .sweep-to-bottom:hover:before {
+  transform: scaleY(1);
+}
+.main .sweep-to-top {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.main .sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .sweep-to-top:hover {
+  color: #fff;
+}
+.main .sweep-to-top:hover:before {
+  transform: scaleY(1);
+}
+.main .bounce-to-right {
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.main .bounce-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: all 0.5s;
+  transition-timing-function: ease-out;
+}
+.main .bounce-to-right:hover {
+  color: #fff;
+}
+.main .bounce-to-right:hover:before {
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+.main .bounce-to-left {
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.main .bounce-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: all 0.5s;
+  transition-timing-function: ease-out;
+}
+.main .bounce-to-left:hover {
+  color: #fff;
+}
+.main .bounce-to-left:hover:before {
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+.main .bounce-to-bottom {
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.main .bounce-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleY(0);
+  transform-origin: 100% 0%;
+  transition: all 0.5s;
+  transition-timing-function: ease-out;
+}
+.main .bounce-to-bottom:hover {
+  color: #fff;
+}
+.main .bounce-to-bottom:hover:before {
+  transform: scaleY(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+.main .bounce-to-top {
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.main .bounce-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleY(0);
+  transform-origin: 0% 100%;
+  transition: all 0.5s;
+  transition-timing-function: ease-out;
+}
+.main .bounce-to-top:hover {
+  color: #fff;
+}
+.main .bounce-to-top:hover:before {
+  transform: scaleY(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+.main .radial-out {
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  overflow: hidden;
+}
+.main .radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scale(0);
+  border-radius: 50%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .radial-out:hover {
+  color: #fff;
+}
+.main .radial-out:hover:before {
+  transform: scale(2);
+}
+.main .radial-in {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #2098D1;
+}
+.main .radial-in:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  transform: scale(2);
+  border-radius: 50%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .radial-in:hover {
+  color: #fff;
+}
+.main .radial-in:hover:before {
+  opacity: 1;
+  transform: scale(0);
+}
+.main .rectangle-in {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #2098D1;
+}
+.main .rectangle-in:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  transform: scale(1);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .rectangle-in:hover {
+  color: #fff;
+}
+.main .rectangle-in:hover:before {
+  opacity: 1;
+  transform: scale(0);
+}
+.main .rectangle-out {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background: #e1e1e1;
+}
+.main .rectangle-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scale(0);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .rectangle-out:hover {
+  color: #fff;
+}
+.main .rectangle-out:hover:before {
+  transform: scale(1);
+}
+.main .shutter-in-horizontal {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #2098D1;
+}
+.main .shutter-in-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  transform-origin: 50%;
+  transform: scaleX(1);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .shutter-in-horizontal:hover {
+  color: #fff;
+}
+.main .shutter-in-horizontal:hover:before {
+  opacity: 1;
+  transform: scaleX(0);
+}
+.main .shutter-out-horizontal {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background: #e1e1e1;
+}
+.main .shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleX(0);
+  transform-origin: 50%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .shutter-out-horizontal:hover {
+  color: #fff;
+}
+.main .shutter-out-horizontal:hover:before {
+  transform: scaleX(1);
+}
+.main .shutter-in-vertical {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #2098D1;
+}
+.main .shutter-in-vertical:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  transform-origin: 50%;
+  transform: scaleY(1);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .shutter-in-vertical:hover {
+  color: #fff;
+}
+.main .shutter-in-vertical:hover:before {
+  opacity: 1;
+  transform: scaleY(0);
+}
+.main .shutter-out-vertical {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background: #e1e1e1;
+}
+.main .shutter-out-vertical:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  transform: scaleY(0);
+  transform-origin: 50%;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .shutter-out-vertical:hover {
+  color: #fff;
+}
+.main .shutter-out-vertical:hover:before {
+  transform: scaleY(1);
+}
+.main .border-fade {
+  transition: all 0.3s;
+  box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .border-fade:hover {
+  box-shadow: inset 0 0 0 4px #2098D1, 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .hollow {
+  transition: all 0.3s;
+  box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .hollow:hover {
+  background: none;
+}
+.main .outline-out {
+  position: relative;
+  transition: all 0.3s;
+  background: #e1e1e1;
+}
+.main .outline-out:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: #e1e1e1 solid 4px;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .outline-out:hover:before {
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+}
+.main .underline-from-center {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  background: #e1e1e1;
+}
+.main .underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  height: 4px;
+  background: #2098D1;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .underline-from-center:hover:before {
+  left: 0;
+  right: 0;
+}
+.main .reveal {
+  position: relative;
+  transition: all 0.1s;
+  z-index: 1;
+  overflow: hidden;
+  background: #e1e1e1;
+}
+.main .reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-color: #2098D1;
+  border-width: 0;
+  border-style: solid;
+  transition: all 0.1s;
+  transition-timing-function: ease-out;
+}
+.main .reveal:hover:before {
+  transform: translateY(0);
+  border-width: 4px;
+}
+.main .underline-reveal {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+  overflow: hidden;
+}
+.main .underline-reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  height: 4px;
+  transform: translateY(4px);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.main .underline-reveal:hover:before {
+  transform: translateY(0);
+}
+.main .float-shadow {
+  position: relative;
+  transition: all 0.3s;
+  z-index: 1;
+}
+.main .float-shadow:before {
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  transition: all 0.3s;
+}
+.main .float-shadow:hover {
+  transform: translateY(-5px);
+}
+.main .float-shadow:hover:before {
+  opacity: 1;
+  transform: translateY(5px);
+}
+.main .box-shadow-outset {
+  transition: all 0.3s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .box-shadow-outset:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .outset {
+  transition: all 0.3s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .outset:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6), -2px -2px 2px rgba(0, 0, 0, 0.6);
+}
+.main .box-shadow-inset {
+  transition: all 0.3s;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .box-shadow-inset:hover {
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .inset {
+  transition: all 0.3s;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);
+}
+.main .inset:hover {
+  box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.6), inset -2px -2px 1px rgba(0, 0, 0, 0.6);
+}
+/*# sourceMappingURL=./hover.css.map */

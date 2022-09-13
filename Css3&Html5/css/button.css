@@ -1,0 +1,377 @@
+body {
+  background-color: #e0e5ec;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../css/iconfont.ttf') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 48px;
+  font-style: normal;
+}
+h1 {
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+  margin: 20px 0;
+}
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  color: #676767;
+}
+.fram {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fram .custom {
+  width: 130px;
+  height: 40px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.fram .custom.btn1 {
+  line-height: 42px;
+  padding: 0;
+  background: linear-gradient(0deg, #00acee 0%, #027efb 100%);
+}
+.fram .custom.btn1:before {
+  height: 0%;
+  width: 2px;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #027efb;
+  transition: all 0.3s ease;
+}
+.fram .custom.btn1:after {
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #027efb;
+  transition: all 0.3s ease;
+}
+.fram .custom.btn1:hover {
+  background: transparent;
+  box-shadow: none;
+}
+.fram .custom.btn1:hover:before {
+  height: 100%;
+}
+.fram .custom.btn1:hover:after {
+  width: 100%;
+}
+.fram .custom.btn1 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.fram .custom.btn1 span:before {
+  content: "";
+  width: 2px;
+  height: 0%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #027efb;
+  transition: all 0.3s ease;
+}
+.fram .custom.btn1 span:after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #027efb;
+  transition: all 0.3s ease;
+}
+.fram .custom.btn1 span:hover {
+  color: #027efb;
+}
+.fram .custom.btn1 span:hover:before {
+  height: 100%;
+}
+.fram .custom.btn1 span:hover:after {
+  width: 100%;
+}
+.fram .custom.btn2 {
+  line-height: 42px;
+  padding: 0;
+  background: radial-gradient(circle, #f796c0 0%, #76aef1 100%);
+}
+.fram .custom.btn2:before {
+  height: 0%;
+  width: 2px;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #027efb;
+  transition: all 0.4s ease;
+}
+.fram .custom.btn2:after {
+  height: 0%;
+  width: 2px;
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: #027efb;
+  transition: all 0.4s ease;
+}
+.fram .custom.btn2:hover {
+  color: #027efb;
+  background: transparent;
+  box-shadow: none;
+}
+.fram .custom.btn2:hover:before {
+  height: 2px;
+  width: 100%;
+}
+.fram .custom.btn2:hover:after {
+  height: 2px;
+  width: 100%;
+}
+.fram .custom.btn2 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.fram .custom.btn3 {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  display: inline-block;
+}
+.fram .custom.btn3 span {
+  background: #7fbfff;
+  color: #3b97f3;
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0;
+  margin-left: 20px;
+  text-align: center;
+  transition: all 0.3s;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.fram .custom.btn3 span.click {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+  transform: rotateX(90deg);
+  transform-origin: 50% 50% -20px;
+}
+.fram .custom.btn3 span.read {
+  transform-origin: 50% 50% -20px;
+  transform: rotateX(0deg);
+}
+.fram .custom.btn3:hover span.click {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transform: rotateX(0deg);
+  color: #fff;
+}
+.fram .custom.btn3:hover span.read {
+  background: transparent;
+  color: transparent;
+  box-shadow: none;
+  transform: rotateX(-90deg);
+}
+.fram .custom.btn4 {
+  background: linear-gradient(0deg, #6009f0 0%, #8105f0 100%);
+}
+.fram .custom.btn4:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.5), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+.fram .custom.btn5 {
+  transition: all 0.3s;
+  overflow: hidden;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+}
+.fram .custom.btn5:before {
+  content: "";
+  position: absolute;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  height: 2px;
+  background: #027efb;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.fram .custom.btn5:hover {
+  background: transparent;
+  color: #03c8a8;
+}
+.fram .custom.btn5:hover:before {
+  left: 0;
+  right: 0;
+}
+.fram .custom.btn6 {
+  background: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.fram .custom.btn6:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #027efb;
+  height: 2px;
+  transform: translateY(4px);
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.fram .custom.btn6:hover {
+  background: transparent;
+  color: #b621fe;
+}
+.fram .custom.btn6:hover:before {
+  transform: translateY(0);
+}
+.fram .custom.btn7 {
+  background: #b621fe;
+}
+.btn-click {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-click .btn-click1 label {
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-click .btn-click1 label input#btn {
+  display: none;
+}
+.btn-click .btn-click1 label .box {
+  width: 120px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #DDD;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.btn-click .btn-click1 label .box .no {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -50px;
+  transition: all 0.4s;
+}
+.btn-click .btn-click1 label .box .off {
+  left: 70px;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.4s;
+}
+.btn-click .btn-click1 label .box .dot {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+.btn-click .btn-click1 label input:checked + .box {
+  background-color: #027efb;
+}
+.btn-click .btn-click1 label input:checked + .box .dot {
+  left: 70px;
+}
+.btn-click .btn-click1 label input:checked + .box .no {
+  left: 0px;
+}
+.btn-click .btn-click1 label input:checked + .box .off {
+  left: 120px;
+}
+.btn-click .btn-click2 {
+  display: flex;
+  align-items: center;
+}
+.btn-click .btn-click2 label {
+  display: inline-block;
+}
+.btn-click .btn-click2 label input#btn2 {
+  display: none;
+}
+.btn-click .btn-click2 label .btn {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+.btn-click .btn-click2 label .btn .moon {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-click .btn-click2 label .btn .sun {
+  position: absolute;
+  display: none;
+  transition: all 0.3s;
+}
+.btn-click .btn-click2 span {
+  display: inline-block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 600;
+}
+.btn-click .btn-click2 input:checked + .btn .moon {
+  display: none;
+}
+.btn-click .btn-click2 input:checked + .btn .sun {
+  display: block;
+  color: white;
+}
+/*# sourceMappingURL=./button.css.map */

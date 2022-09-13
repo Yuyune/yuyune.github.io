@@ -12,19 +12,31 @@ ul {
   margin: 0;
   padding: 0;
 }
+body {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #c6d2e4;
+}
 li {
   list-style: none;
 }
 a {
   text-decoration: none;
+  color: black;
 }
 h1 {
   font-size: 36rem;
 }
+img {
+  max-width: 600px;
+}
+.active a {
+  color: #fffcfc;
+}
 .head .head-warp {
   width: 60rem;
   height: 100vh;
-  background-color: lightblue;
+  background-color: #7fbfffc2;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -35,12 +47,14 @@ h1 {
 }
 .head .head-warp a {
   display: block;
+  padding-top: 10px;
 }
 .head .head-warp a img {
   width: 36rem;
   height: auto;
   display: block;
   padding-bottom: 10px;
+  border-radius: 50%;
 }
 .head .head-warp a span {
   display: inline;
@@ -50,15 +64,298 @@ h1 {
   padding-top: 30px;
 }
 .head .head-warp .introduce ul li {
-  padding: 20px 0;
+  margin: 20px 0;
   font-size: 6rem;
   display: flex;
   align-items: center;
+  position: relative;
 }
-.head .head-warp .introduce ul li span {
+.head .head-warp .introduce ul li:before {
+  height: 0%;
+  width: 2px;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: rgba(2, 126, 251, 0.52);
+  transition: all 0.4s ease;
+}
+.head .head-warp .introduce ul li:after {
+  height: 0%;
+  width: 2px;
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: #027efb;
+  transition: all 0.4s ease;
+}
+.head .head-warp .introduce ul li:hover:before {
+  height: 2px;
+  width: 100%;
+}
+.head .head-warp .introduce ul li:hover:after {
+  height: 2px;
+  width: 100%;
+}
+.head .head-warp .introduce ul li a {
+  display: inline-block;
+  line-height: 45px;
+  vertical-align: middle;
+}
+.head .head-warp .introduce ul li a span {
+  display: inline-block;
   margin-right: 20px;
+  margin-bottom: 6px;
+  line-height: 45px;
+  vertical-align: middle;
 }
-.works {
+.warp {
+  padding: 50px 50px 50px 50px;
+}
+.warp h2 {
+  padding: 0 0 10px;
+  border-bottom: 2px solid #027efb;
+  font-family: "Cormorant Garamond", serif;
+}
+.warp .contant {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.warp .contant .works {
+  width: 500px;
+  height: 350px;
+  padding: 10px;
+  position: relative;
+}
+.warp .contant .works a.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.warp .contant .works a.image img {
+  display: block;
+  width: 500px;
+  height: auto;
+  border-radius: 5px;
+}
+.warp .contant .works a.image .image-ove {
+  background-color: rgba(75, 80, 82, 0.712);
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s;
+  transform: scale(0);
+}
+.warp .contant .works a.image .image-ove i {
+  font-size: 24px;
+  color: #fff0f0;
+}
+@keyframes icon {
+  0% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.warp .contant .works a.image:hover .image-ove {
+  transform: scale(1);
+}
+.warp .contant .works a.image:hover .image-ove i {
+  animation-name: icon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+.warp .contant .works a.content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.warp .contant .works a.content .text {
+  width: 150px;
+  height: 40px;
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warp .contant .works a.content .text:before {
+  content: "";
+  position: absolute;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  height: 2px;
+  background: #027efb;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.warp .contant .works a.content .text:hover {
+  border-radius: 5px;
+}
+.warp .contant .works a.content .text:hover:before {
+  left: 0;
+  right: 0;
+}
+.warp .contant .works a.content .text span {
+  display: inline-block;
+  position: relative;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.main {
+  margin-left: 60rem;
+}
+.main .main-context {
+  text-align: center;
+}
+.main .main-context h1 {
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+.portfolio {
+  margin-left: 60rem;
+}
+.webpage {
+  margin-left: 60rem;
+}
+.webpage .warp {
+  padding: 50px 50px 50px 50px;
+}
+.webpage .warp h2 {
+  padding: 0 0 10px;
+  border-bottom: 2px solid #027efb;
+}
+.webpage .warp .contant {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.webpage .warp .contant .works {
+  width: 500px;
+  height: 350px;
+  padding: 10px;
+  position: relative;
+}
+.webpage .warp .contant .works a.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.webpage .warp .contant .works a.image img {
+  display: block;
+  width: 500px;
+  height: auto;
+  border-radius: 5px;
+}
+.webpage .warp .contant .works a.image .image-ove {
+  background-color: rgba(75, 80, 82, 0.712);
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s;
+  transform: scale(0);
+}
+.webpage .warp .contant .works a.image .image-ove i {
+  font-size: 24px;
+  color: #fff0f0;
+}
+@keyframes icon {
+  0% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.webpage .warp .contant .works a.image:hover .image-ove {
+  transform: scale(1);
+}
+.webpage .warp .contant .works a.image:hover .image-ove i {
+  animation-name: icon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+.webpage .warp .contant .works a.content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.webpage .warp .contant .works a.content .text {
+  width: 150px;
+  height: 40px;
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.webpage .warp .contant .works a.content .text:before {
+  content: "";
+  position: absolute;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  height: 2px;
+  background: #027efb;
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+.webpage .warp .contant .works a.content .text:hover {
+  border-radius: 5px;
+}
+.webpage .warp .contant .works a.content .text:hover:before {
+  left: 0;
+  right: 0;
+}
+.webpage .warp .contant .works a.content .text span {
+  display: inline-block;
+  position: relative;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.case {
+  margin-left: 60rem;
+}
+.effect {
   margin-left: 60rem;
 }
 /*# sourceMappingURL=./index.css.map */
