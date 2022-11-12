@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="tail">
+            <!-- <div class="b"></div>
+            <div class="s"></div> -->
+        </div>
+        <div class="needle">
+            <div class="h"></div>
+            <div class="m"></div>
+            <div class="ss"></div>
+        </div>
+    </div>
+    <style>
+        .clock {
+            width: 400px;
+            height: 400px;
+            background-color: rgb(234, 242, 245);
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid black;
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+
+        .tail {
+            /* display: flex; */
+            position: relative;
+            /* justify-content: center; */
+        }
+
+        .tail div {
+            transform-origin: center 200px;
+        }
+
+        .b {
+            width: 6px;
+            height: 40px;
+            background-color: rgb(0, 0, 0);
+            position: absolute;
+            border-radius: 3px;
+
+            top: -2px;
+            left: 50%;
+            margin-left: -3px;
+            /* transform: rotate(45deg); */
+        }
+
+        .s {
+            width: 4px;
+            height: 20px;
+            background-color: rgb(26, 27, 26);
+            border-radius: 3px;
+
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            margin-left: -2px;
+
+        }
+
+        .needle {
+            transform-origin: bottom center;
+            /* position: relative; */
+        }
+
+        .needle .h {
+            width: 6px;
+            height: 100px;
+            background-color: rgb(30, 24, 24);
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -3px;
+            margin-top: -100px;
+            transform-origin: bottom center;
+
+        }
+
+        .needle .m {
+            width: 4px;
+            height: 150px;
+            background-color: rgb(39, 33, 33);
+            border-radius: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -2px;
+            margin-top: -150px;
+            transform-origin: bottom center;
+
+        }
+
+        .needle .ss {
+            width: 2px;
+            height: 180px;
+            background-color: rgb(232, 49, 95);
+            border-radius: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -1px;
+            margin-top: -180px;
+            /* transform: rotate(45deg); */
+            transform-origin: bottom center;
+
+
+        }
+    </style>
+    <script>
+        for (let i = 0; i < 12 * 5; i++) {
+            var node = document.createElement('div');
+            if (i % 5 == 0) {
+                node.className = 'b';
+            } else {
+                node.className = 's';
+            }
+            node.style.transform = 'rotate(' + i * (360 / (12 * 5)) + 'deg';
+            document.querySelector('.tail').appendChild(node);
+        }
+        setInterval(function () {
+            var now = new Date()
+            // console.log(now);
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+            // console.log(s);
+            // var second=parseInt(now/1000);
+            // console.log(second);
+            var hh = document.getElementsByClassName('h')[0];
+            var mm = document.getElementsByClassName('m')[0];
+            var ss = document.getElementsByClassName('ss')[0];
+            // console.log(ss);
+            hh.style.transform = 'rotate(' + (h * (360 / 12) + m / 2) + 'deg)';//  m/2  1h=60m,1h转30度，60/30一分钟里时针转多少度
+            mm.style.transform = 'rotate(' + (m * (360 / 60) + s / 10) + 'deg)';// s/10 1m=60s,1m转6度，60/6 一秒里分针转多少度
+            ss.style.transform = 'rotate(' + s * (360 / 60) + 'deg)';
+
+        }, 1000)
+    </script>
+</body>
+
+</html>

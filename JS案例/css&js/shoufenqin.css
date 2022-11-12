@@ -1,0 +1,101 @@
+body{
+    background-color:#f7f9ffc8;
+}
+
+/* 王者 */
+.heros {
+    width: 732px;
+    height: 69px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+ul.heros-list {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+li.active {
+    width: 224px;
+}
+
+ul.heros-list li:nth-of-type(1) img.small {
+    opacity: 0;
+}
+
+ul.heros-list li:nth-of-type(1) img.large {
+    opacity: 1;
+}
+
+li {
+    float: left;
+    display: inline;
+    width: 69px;
+    height: 69px;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+li img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .3s;
+}
+
+li img.small {
+    width: 69px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: all .3s;
+}
+li img.large {
+    opacity: 0;
+    transition: all .3s;
+}
+/* 手风琴 */
+.stage {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    background-color: lightblue;
+    margin: 0 auto;
+    margin-top: 40px;
+    
+}
+
+.stage div {
+    width: 50px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s;
+}
+
+.stage div:nth-child(1) {
+    width: 300px;
+    background-image: url("../image/photo3d63.jpg");
+}
+
+.stage div:nth-child(2) {
+    background-image: url("../image/photo5657.jpg");
+}
+
+.stage div:nth-child(3) {
+    background-image: url("../image/photo87234.jpg");
+}
+
+.stage div:nth-child(4) {
+    background-image: url("../image/photo8b28.jpg");
+}
+
+.stage div:nth-child(5) {
+    background-image: url("../image/photoa480.jpg");
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background-color: lightblue;
+            margin: 0 auto; 
+            border: 1px solid rgb(144, 139, 139);
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .mask {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .zoom {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto;
+            background-color: lightblue;
+            background-image: url(./image/手机.jpg);
+            border: 1px solid rgb(144, 139, 139);
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./image/手机.jpg" alt="">
+        <div class="mask"></div>
+    </div>
+    <hr>
+    <div class="zoom"></div>
+    <script>
+        var level = 3;
+        var boxEl = document.querySelector(".box");
+        var maskEl = document.querySelector(".box .mask");
+        var zoomEl = document.querySelector(".zoom");
+
+        // 根据放大倍数设置背景图的大小
+        zoomEl.style["background-size"] = level * 100 + '%';
+
+        // box的宽度和高度
+        var boxWidth = boxEl.offsetWidth;
+        var boxHeight = boxEl.offsetHeight;
+
+        // 根据box的宽度和高度以及放大倍数计算mask的大小
+        var maskWidth = boxWidth / level;
+        var maskHeight = boxHeight / level;
+
+        // 设置mask的大小
+        maskEl.style.width = maskWidth + 'px';
+        maskEl.style.height = maskHeight + 'px';
+
+        // box相对于浏览器的偏移量
+        var offsetLeft = boxEl.offsetLeft;
+        var offsetTop = boxEl.offsetTop;
+
+        // 放大图的大小
+        var zoomWidth = zoomEl.offsetWidth;
+        var zoomHeight = zoomEl.offsetHeight;
+
+
+        boxEl.onmousemove = function () {
+
+            //鼠标的坐标  event.pageX：box距离的浏览器距离 offsetLeft：box相对于浏览器的偏移量  
+            var mx = event.pageX - offsetLeft;
+            var my = event.pageY - offsetTop;
+
+            // mask的中心点
+            var maskX = mx - maskWidth / 2;
+            var maskY = my - maskHeight / 2;
+
+            if (maskX < 0) {
+                maskX = 0;
+            }
+            if (maskX > boxWidth - maskWidth) {
+                maskX = boxWidth - maskWidth;
+            }
+            if (maskY < 0) {
+                maskY = 0;
+            }
+            if (maskY > boxHeight - maskHeight) {
+                maskY = boxHeight - maskHeight;
+            }
+
+            // mask跟着鼠标走
+            maskEl.style.left = maskX + 'px';
+            maskEl.style.top = maskY + 'px';
+
+            zoomEl.style['background-position'] =
+                -(zoomWidth / maskWidth) * maskX + 'px ' + -(zoomHeight / maskHeight) * maskY + 'px';
+        }
+    </script>
+</body>
+
+</html>

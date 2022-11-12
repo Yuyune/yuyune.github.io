@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D柱状图</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="card ">
+            <h2>STEPS</h2>
+            <p>THIS WEEK</p>
+            <ul class="chart">
+                <li class="bar bar1">M</li>
+                <li class="bar bar2">T</li>
+                <li class="bar bar3">W</li>
+                <li class="bar bar4">T</li>
+                <li class="bar bar5">F</li>
+                <li class="bar bar6">S</li>
+                <li class="bar bar7">S</li>
+            </ul>
+            <h3>93,000</h3>
+        </div>
+    </div>
+    <style>
+        body {
+            perspective: 1000px;
+            margin: 0;
+            transform-style: preserve-3d;
+            background: linear-gradient(120deg, rgba(50, 150, 100, 0.4), rgba(0, 0, 100, 0));
+        }
+
+        .background {
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+
+        }
+
+        .background:before,
+        .background:after {
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 200, 0.4), rgba(0, 0, 200, 0));
+        }
+
+        .background:after {
+            background: linear-gradient(240deg, rgba(150, 50, 50, 0.4), rgba(0, 0, 200, 0));
+        }
+
+        .card {
+            background-color: black;
+            width: 250px;
+            height: 300px;
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform-style: preserve-3d;
+            background: url(../image/600x600.jpg) no-repeat center center;
+            background-size: cover;
+            transition: all .3s;
+            box-shadow: 5px 5px 24px 0px rgb(0 0 0 / 20%);
+            transform-origin: center center 100px;
+        }
+
+        .card::before,
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 5px 5px 24px 0px rgb(0 0 0 / 20%);
+            transition: inherit;
+        }
+
+        .card::before {
+            background-color: rgba(0, 0, 255, 0.2);
+            z-index: 1;
+            transform: translateZ(1px);
+        }
+
+        .card::after {
+            background-color: black;
+            z-index: -1;
+            transform: translateZ(-20px);
+        }
+
+        .card.active {
+            box-shadow: 5px 5px 24px 0px rgb(0 0 0 / 20%);
+            transform: rotateX(60deg) translateZ(50px);
+        }
+
+        .card.active::before,
+        .card.active::after {
+            box-shadow: 5px 5px 24px 0px rgb(0 0 0 / 20%);
+        }
+
+        .card.active::before {
+            background-color: rgba(0, 0, 255, 0.3);
+            z-index: 1;
+        }
+
+        ul.chart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transition: inherit;
+            transform-style: preserve-3d;
+            z-index: 9;
+        }
+
+        ul.chart li.bar {
+            width: 15px;
+            height: 15px;
+            margin: 30px 10px;
+            background-color: white;
+            transform-style: preserve-3d;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: center;
+            position: relative;
+            transition: inherit;
+            transform-style: preserve-3d;
+            transform: rotate(45deg) translateZ(1px);
+
+        }
+
+        ul.chart li.bar::before,
+        ul.chart li.bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background-image: linear-gradient(to right, white, rgb(150, 150, 150));
+            text-align: right;
+            transform-origin: right bottom;
+        }
+
+        ul.chart li.bar1::after {
+            content: '2,000';
+        }
+
+        ul.chart li.bar2::after {
+            content: '1,900';
+        }
+
+        ul.chart li.bar3::after {
+            content: '1,800';
+        }
+
+        ul.chart li.bar4::after {
+            content: '1,700';
+        }
+
+        ul.chart li.bar5::after {
+            content: '1,800';
+        }
+
+        ul.chart li.bar6::after {
+            content: '1,900';
+        }
+
+        ul.chart li.bar7::after {
+            content: '1,800';
+        }
+
+        ul.chart li.bar::before {
+            background-color: lightcoral;
+
+        }
+
+        .card.active ul.chart li.bar.bar1 {
+            transform: rotate(30deg) translateZ(100px);
+        }
+
+        .card.active ul.chart li.bar.bar2 {
+            transform: rotate(30deg) translateZ(90px);
+        }
+
+        .card.active ul.chart li.bar.bar3 {
+            transform: rotate(30deg) translateZ(85px);
+        }
+
+        .card.active ul.chart li.bar.bar4 {
+            transform: rotate(30deg) translateZ(80px);
+        }
+
+        .card.active ul.chart li.bar.bar5 {
+            transform: rotate(30deg) translateZ(85px);
+        }
+
+        .card.active ul.chart li.bar.bar6 {
+            transform: rotate(30deg) translateZ(95px);
+        }
+
+        .card.active ul.chart li.bar.bar7 {
+            transform: rotate(30deg) translateZ(80px);
+        }
+
+        .card ul.chart li.bar::before {
+            transform-origin: right center;
+            transform: rotateY(-90deg) rotateX(-180deg);
+        }
+
+        .card ul.chart li.bar::after {
+            transform: rotateY(-90deg) rotateX(-90deg);
+        }
+
+        h2 {
+            margin: 20px 0 0 0;
+            color: white;
+            font-size: 30px;
+            line-height: 30px;
+            margin: 0;
+            font-weight: 300;
+            padding: 0;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        p {
+            color: white;
+            font-size: 16px;
+            line-height: 30px;
+            margin: 0;
+            font-weight: 300;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        h3 {
+            margin: 10px 0 40px 0;
+            color: white;
+            font-size: 30px;
+            line-height: 30px;
+            margin: 0;
+            font-weight: 300;
+            padding: 0;
+        }
+
+        .card.active h2 {
+            transform: translateZ(25px);
+        }
+
+        .card.active p {
+            transform: translateZ(20px);
+        }
+
+        .card.active h3 {
+            transform: translateZ(6px);
+        }
+    </style>
+    <script>
+        document.querySelector(".card").onclick = function () {
+            this.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

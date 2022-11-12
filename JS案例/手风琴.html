@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css&js/shoufenqin.css">
+    <title>手风琴</title>
+</head>
+
+<body>
+    <div class="heros">
+        <ul class="heros-list">
+            <li class="active"><img class="small" src="./image/126.jpg" alt=""> <img class="large"
+                    src="./image/126-freehover.png" alt=""></li>
+            <li><img class="small" src="./image/127.jpg" alt=""><img class="large" src="./image/127-freehover.png"
+                    alt=""></li>
+            <li><img class="small" src="./image/131.jpg" alt=""><img class="large" src="./image/131-freehover.png"
+                    alt=""></li>
+            <li><img class="small" src="./image/173.webp" alt=""><img class="large" src="./image/173-freehover.png"
+                    alt=""></li>
+            <li><img class="small" src="./image/507.webp" alt=""><img class="large" src="./image/507-freehover.png"
+                    alt=""></li>
+            <li><img class="small" src="./image/525.jpg" alt=""><img class="large" src="./image/525-freehover.png"
+                    alt=""></li>
+            <li><img class="small" src="./image/531.webp" alt=""><img class="large" src="./image/531-freehover.png"
+                    alt=""></li>
+        </ul>
+    </div>
+    <div class="stage">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        var imEl = document.querySelectorAll('.stage div');
+        imEl.forEach(function (img, i) {
+            img.onclick = function () {
+                imEl.forEach(function (ig, n) {
+                    if (n === i) {
+                        ig.style.width = '300px';
+                    } else {
+                        ig.style.width = '50px';
+                    }
+                });
+            };
+        });
+
+        //王者荣耀
+        var heros = document.querySelectorAll('ul.heros-list li');
+        var listSmall = document.querySelectorAll('li img.small');
+        var listLarge = document.querySelectorAll('li img.large');
+
+        heros.forEach(function (img, i) {
+            img.onmouseenter = function () {
+                heros.forEach(function (ig, n) {
+                    if (n === i) {
+                        ig.style.width = '224px';
+                        listLarge[i].style.opacity = 1;
+                    } else {
+                        ig.style.width = '69px';
+                        listLarge[n].style.opacity = 0;
+                        listSmall[n].style.opacity = 1;
+                    }
+                });
+            };
+        })
+    </script>
+</body>
+
+</html>

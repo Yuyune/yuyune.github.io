@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/my-minireset.css">
+    <title>找色块</title>
+</head>
+
+<body>
+    <h1>第 1 关</h1>
+    <div class="box"></div>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.919) ;
+        }
+        .box {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color:#e0e5ecc7;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        .box li {
+            border-radius: 50%;
+            list-style: none;
+        }
+    </style>
+    <script>
+        var level = 1;
+        var num=1;
+        var box = document.querySelector('.box');
+        var h=document.querySelector('h1');
+
+        function showDot(level) {
+            box.innerHTML='';
+
+            var color='#'+Math.random().toString(16).slice(-6);
+
+            for (let i = 0; i < Math.pow(level + 2, 2); i++) {
+                var node = document.createElement('li');
+
+                node.style.backgroundColor=color;
+                node.style.width = 500 / (level + 2) + 'px';
+                box.appendChild(node);
+            }
+            var index=Math.floor(Math.random()* box.querySelectorAll('li').length);
+            box.querySelectorAll('li')[index].style.opacity='0.7';
+            box.querySelectorAll('li')[index].onclick=function(){
+                level++;
+                num++;
+                h.innerHTML='第 '+ num +' 关';
+                showDot(level);
+            }
+        }
+        showDot(level)
+    </script>
+</body>
+
+</html>
