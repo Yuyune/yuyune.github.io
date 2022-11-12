@@ -236,6 +236,16 @@ img {
 .portfolio {
   margin-left: 60rem;
 }
+.portfolio .warp .contant .works {
+  width: 200px;
+}
+.portfolio .warp .contant .works a.image img {
+  display: block;
+  width: 200px;
+  height: auto;
+  height: 280px;
+  border-radius: 5px;
+}
 .webpage {
   margin-left: 60rem;
 }
@@ -243,6 +253,7 @@ img {
   display: block;
   width: 500px;
   height: auto;
+  height: 280px;
   border-radius: 5px;
 }
 .case {
